@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Mochiy+Pop+P+One&family=Quintessential&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  color: #FFF;
+  background: -webkit-gradient(linear, left top, right top, from(#2C5364), color-stop(#203A43), to(#0F2027));
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+}
+
+.title {
+  position: absolute;
+  top: 20px;
+}
+
+.title h1 {
+  font-family: 'Comforter', cursive;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+}
+
+.container {
+  position: relative;
+  top: 40px;
+  width: 550px;
+  height: auto;
+  padding: 80px 30px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.container .quotes {
+  position: relative;
+  text-align: center;
+}
+
+.container .quotes .quote {
+  position: relative;
+  top: -40px;
+  font-size: 1.5rem;
+  word-spacing: 2px;
+  letter-spacing: 1.2px;
+}
+
+.container .quotes .author {
+  position: relative;
+  float: right;
+  top: -15px;
+}
+
+.container .events {
+  position: absolute;
+  width: 90%;
+  bottom: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .events .share {
+  position: relative;
+  font-size: 1.3rem;
+}
+
+.container .events .share .tooltip {
+  position: absolute;
+  top: -35px;
+  left: 50px;
+  font-size: 0.75rem;
+  opacity: 0.35;
+  display: none;
+}
+
+.container .events .share .tweet {
+  position: relative;
+  bottom: -3px;
+  background: -webkit-gradient(linear, left top, right top, from(#2C5364), color-stop(#203A43), to(#0F2027));
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  margin-right: 5px;
+  padding: 5px 10px;
+  color: #FFF;
+  border-radius: 4px;
+}
+
+.container .events .share .copy {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: -webkit-gradient(linear, left top, right top, from(#2C5364), color-stop(#203A43), to(#0F2027));
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  color: #FFF;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.container .events .share .copy i {
+  font-size: 1rem;
+}
+
+.container .events .getNew {
+  position: absolute;
+  right: 0;
+}
+
+.container .events .getNew .new_quote {
+  background: -webkit-gradient(linear, left top, right top, from(#2C5364), color-stop(#203A43), to(#0F2027));
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  color: #FFF;
+  padding: 11px;
+  margin-right: 15px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.signature {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+
+.signature h1 {
+  font-family: 'Comforter', cursive;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  opacity: 0.3;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.signature h1:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 400px;
+  }
+  .container .quotes .quote {
+    font-size: 1.2rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
