@@ -1,177 +1,203 @@
-@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Mochiy+Pop+P+One&family=Quintessential&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Mochiy+Pop+P+One&family=Quintessential&display=swap");
 
-$white : #FFF;
-$black : #000;
+$white: #fff;
+$black: #000;
 
-
-@mixin display{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@mixin display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Mochiy Pop P One', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mochiy Pop P One", sans-serif;
 }
 
-body{
-    @include display();
-    min-height: 100vh;
-    color: $white;
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); 
+body {
+  @include display();
+  min-height: 100vh;
+  color: $white;
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
 }
 
-.title{
-    position: absolute;
-    top: 20px;
-    & h1{
-        font-family: 'Comforter', cursive;
-        font-size: 4rem;
-        letter-spacing: 0.3rem;
-    }
-}
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000428;
+  background: linear-gradient(to left, #000428, #004e92);
+  @include display();
+  z-index: 111;
 
-.container{
+  & span {
     position: relative;
-    top: 40px;
-    width: 550px;
-    height: auto;
-    padding: 80px 30px;
-    border-radius: 5px;
-    background: rgba(255,255,255,0.2);
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: $pink;
+    margin: 10px;
+    animation: load 1s ease forwards infinite;
+    transition: 0.5s;
+    animation-duration: calc(var(--i) * 0.8s);
+  }
 
-    & .quotes{
-        position: relative;
-        text-align: center;
-
-        & .quote{
-            position: relative;
-            top: -40px;
-            font-size: 1.5rem;
-            word-spacing: 2px;
-            letter-spacing: 1.2px;
-        }
-
-        & .author{
-            position: relative;
-            float: right;
-            top:-15px;
-        }
+  @keyframes load {
+    0% {
+      transform: translateY(0);
     }
-
-    & .events{
-        position: absolute;
-        width: 90%;
-        bottom: 14px;
-        display: flex;
-
-        & .share{
-            position: relative;
-            font-size: 1.3rem;
-
-            & .tooltip{
-                position: absolute;
-                top: -35px;
-                left: 50px;
-                font-size: 0.75rem;
-                opacity: 0.35;
-                display: none;
-
-            }
-
-            & .tweet{
-                position: relative;
-                bottom: -3px;
-                background: linear-gradient(to right, #2C5364, #203A43, #0F2027); 
-                margin-right: 5px;
-                padding: 5px 10px;
-                color: $white;
-                border-radius: 4px;
-            }
-
-            & .copy{
-                position: relative;
-                width: 40px;
-                height: 40px;
-                background: linear-gradient(to right, #2C5364, #203A43, #0F2027); 
-                color: $white;
-                border-radius: 4px;
-                border: none;
-                cursor: pointer;
-
-                & i{
-                    font-size: 1rem;
-                }
-                
-            }
-        }
-
-        & .getNew{
-            position:absolute;
-            right: 0;
-
-            & .new_quote{
-                background: linear-gradient(to right, #2C5364, #203A43, #0F2027); 
-                color: $white;
-                padding: 11px;
-                margin-right: 15px;
-                border-radius: 4px;
-                outline: none;
-                border: none;
-                cursor: pointer;
-            }
-        }
+    50% {
+      transform: translateY(-20px);
     }
-
+  }
 }
 
-.signature{
+.title {
+  position: absolute;
+  top: 20px;
+  & h1 {
+    font-family: "Comforter", cursive;
+    font-size: 4rem;
+    letter-spacing: 0.3rem;
+  }
+}
+
+.container {
+  position: relative;
+  top: 40px;
+  width: 550px;
+  height: auto;
+  padding: 80px 30px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+
+  & .quotes {
+    position: relative;
+    text-align: center;
+
+    & .quote {
+      position: relative;
+      top: -40px;
+      font-size: 1.5rem;
+      word-spacing: 2px;
+      letter-spacing: 1.2px;
+    }
+
+    & .author {
+      position: relative;
+      float: right;
+      top: -15px;
+    }
+  }
+
+  & .events {
     position: absolute;
-    right: 20px;
-    bottom: 10px;
-    & h1{
-        font-family: 'Comforter', cursive;
-        font-size: 1rem;
-        letter-spacing: 0.1rem;
-        opacity: 0.3;
-        transition: 0.5s;
-        &:hover{
-            opacity: 1;
+    width: 90%;
+    bottom: 14px;
+    display: flex;
+
+    & .share {
+      position: relative;
+      font-size: 1.3rem;
+
+      & .tooltip {
+        position: absolute;
+        top: -35px;
+        left: 50px;
+        font-size: 0.75rem;
+        opacity: 0.35;
+        display: none;
+      }
+
+      & .tweet {
+        position: relative;
+        bottom: -3px;
+        background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+        margin-right: 5px;
+        padding: 5px 10px;
+        color: $white;
+        border-radius: 4px;
+      }
+
+      & .copy {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+        color: $white;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+
+        & i {
+          font-size: 1rem;
         }
+      }
     }
+
+    & .getNew {
+      position: absolute;
+      right: 0;
+
+      & .new_quote {
+        background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+        color: $white;
+        padding: 11px;
+        margin-right: 15px;
+        border-radius: 4px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
-@media screen and (max-width : 600px){
-    .title h1{
-        font-size: 2.3rem;
+.signature {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  & h1 {
+    font-family: "Comforter", cursive;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    opacity: 0.3;
+    transition: 0.5s;
+    &:hover {
+      opacity: 1;
     }
-    .container{
-        width: 400px;
-        & .quotes{
-            & .quote{
-                font-size: 1.2rem;
-            }
-        } 
-    }
+  }
 }
 
-@media screen and (max-width : 400px){
-    .title {
-        top: 20px;
-        & h1{
-        font-size: 2rem;
-        }
+@media screen and (max-width: 600px) {
+  .title h1 {
+    font-size: 2.3rem;
+  }
+  .container {
+    width: 400px;
+    & .quotes {
+      & .quote {
+        font-size: 1.2rem;
+      }
     }
-    .container{
-        width: 340px;
-        & .quotes{
-            & .quote{
-                font-size: 1.2rem;
-            }
-        } 
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .title {
+    top: 20px;
+    & h1 {
+      font-size: 2rem;
     }
+  }
+  .container {
+    width: 340px;
+    & .quotes {
+      & .quote {
+        font-size: 1.2rem;
+      }
+    }
+  }
 }

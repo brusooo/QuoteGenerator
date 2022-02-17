@@ -1,3 +1,12 @@
+$(window).on("load", function () {
+    setTimeout(hideLoader, 2000);
+});
+function hideLoader() {
+    $(".loader").fadeOut(600, function () {
+        $(".loader").css("display", "none");
+    });
+}
+
 let quotesData;
 let val;
 
@@ -27,11 +36,11 @@ const getQuotes = () => {
     });
 }
 
-const getRandomQuote = () =>{
+const getRandomQuote = () => {
     return quotesData.quotes[Math.floor(Math.random() * quotesData.quotes.length)]
 }
 
-const getQuote = () =>{
+const getQuote = () => {
     let randomQuote = getRandomQuote();
 
     let currentQuote = randomQuote.quote;
@@ -44,63 +53,65 @@ const getQuote = () =>{
         'http://twitter.com/intent/tweet?hashtags=todayQuote&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor)
     );
 
-    $('.quote').animate({ opacity: 0 }, 300, 
-    function (){
-        $(this).animate({ opacity: 1 }, 300)}
+    $('.quote').animate({ opacity: 0 }, 300,
+        function () {
+            $(this).animate({ opacity: 1 }, 300)
+        }
     );
     $(".quote").text(randomQuote.quote)
 
 
-    $('.author').animate({ opacity: 0 }, 300, 
-    function () {
-        $(this).animate({ opacity: 1 }, 300)}
+    $('.author').animate({ opacity: 0 }, 300,
+        function () {
+            $(this).animate({ opacity: 1 }, 300)
+        }
     );
     $(".author").text("- " + randomQuote.author)
 
 
     let randomBgColor = bgColors[Math.floor(Math.random() * bgColors.length)];
     $("html body").animate({
-        color : "#FFF"
+        color: "#FFF"
     },
-    10,
-    function(){
-            $(this).css("background",randomBgColor)
-    })
+        10,
+        function () {
+            $(this).css("background", randomBgColor)
+        })
 
-    $(".new_quote").css("background",randomBgColor)
-    $(".tweet").css("background",randomBgColor)
-    $(".copy").css("background",randomBgColor)
+    $(".new_quote").css("background", randomBgColor)
+    $(".tweet").css("background", randomBgColor)
+    $(".copy").css("background", randomBgColor)
 }
 
 
 
 
-$(document).ready(function(){
-    getQuotes().then(()=>getQuote())
+$(document).ready(function () {
+    getQuotes().then(() => getQuote())
 });
 
 $(".new_quote").click(function () {
     getQuote()
 })
 
-$(".copy").click(function(){
+$(".copy").click(function () {
     let $temp = $("<input />");
     $("body").append($temp);
-    val = ($(".quote").text().length )-1;
-    $temp.val('"' + $(".quote").text().slice(0,val) + '" ' + $(".author").text().slice(2)).select();
+    val = ($(".quote").text().length) - 1;
+    $temp.val('"' + $(".quote").text().slice(0, val) + '" ' + $(".author").text().slice(2)).select();
     document.execCommand("copy");
     $temp.remove();
 
 
-    $(this).css("transform","scale(0.85)")
-    $(".tooltip").css("display","flex")
+    $(this).css("transform", "scale(0.85)")
+    $(".tooltip").css("display", "flex")
 
     $(this).animate({
         color: "#FFF"
-    },150,function(){
-            $(this).css("transform","scale(1)")
-            $(".tooltip").css("display","none")
-        }
+    }, 150, function () {
+        $(this).css("transform", "scale(1)")
+        $(".tooltip").css("display", "none")
+    }
     )
 })
 
