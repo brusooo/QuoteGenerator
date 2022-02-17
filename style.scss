@@ -30,14 +30,14 @@ body {
   background: #000428;
   background: linear-gradient(to left, #000428, #004e92);
   @include display();
-  z-index: 111;
+  z-index: 11111;
 
   & span {
     position: relative;
     width: 23px;
     height: 23px;
     border-radius: 50%;
-    background: $pink;
+    background: #f80759;
     margin: 10px;
     animation: load 1s ease forwards infinite;
     transition: 0.5s;
@@ -53,6 +53,7 @@ body {
     }
   }
 }
+
 
 .title {
   position: absolute;
