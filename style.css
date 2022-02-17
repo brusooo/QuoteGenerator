@@ -150,8 +150,26 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  .title h1 {
+    font-size: 2.3rem;
+  }
   .container {
     width: 400px;
+  }
+  .container .quotes .quote {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .title {
+    top: 20px;
+  }
+  .title h1 {
+    font-size: 2rem;
+  }
+  .container {
+    width: 340px;
   }
   .container .quotes .quote {
     font-size: 1.2rem;
